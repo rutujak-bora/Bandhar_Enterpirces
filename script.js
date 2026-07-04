@@ -147,9 +147,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const estimatorQuoteBtn = document.getElementById('estimatorQuoteBtn');
 
   const brandOptions = {
-    mobiles: ['iPhone', 'Samsung', 'Xiaomi', 'OnePlus'],
     laptops: ['Apple', 'Dell', 'Lenovo', 'HP'],
-    printers: ['Canon', 'HP', 'Epson', 'Brother']
+    printers: ['Canon', 'HP', 'Epson', 'Brother'],
+    storage: ['Samsung', 'WD', 'Seagate', 'Crucial'],
+    memory: ['Kingston', 'Corsair', 'G.Skill', 'Crucial']
   };
 
   function populateBrands() {
@@ -196,12 +197,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Lead times calculations
     let lead = '5 - 7 days';
     if (shipping === 'air') {
-      if (cat === 'mobiles') lead = '1 - 2 days';
+      if (cat === 'storage' || cat === 'memory') lead = '1 - 2 days';
       else if (cat === 'laptops') lead = '1 - 3 days';
       else lead = '2 - 3 days';
     } else {
-      if (cat === 'mobiles') lead = '3 - 5 days';
-      else if (cat === 'laptops') lead = '4 - 6 days';
+      if (cat === 'storage' || cat === 'memory') lead = '2 - 4 days';
+      else if (cat === 'laptops') lead = '3 - 5 days';
       else lead = '5 - 7 days';
     }
 
@@ -340,34 +341,44 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Bandhar Enterprises — Product Explorer */
   (function bandharProductSectionInit() {
     const productDataBandhar = {
-      mobiles: {
-        title: 'Mobiles',
-        note: 'Bandhar Enterprises: curated mobile sourcing for retail & B2B channel partners.',
-        subcategories: [
-          { brand: 'iPhone', desc: 'Apple iPhones with local manufacturer warranties.', types: ['iPhone 14', 'iPhone 13'] },
-          { brand: 'Samsung', desc: 'Galaxy series sourced for varied consumer segments.', types: ['Galaxy S23', 'Galaxy A54'] },
-          { brand: 'Xiaomi', desc: 'Value and performance phones for mass-market.', types: ['Redmi Note 12', 'Poco X5'] },
-          { brand: 'OnePlus', desc: 'High-performance Android phones for power users.', types: ['OnePlus 11', 'Nord 3'] }
-        ]
-      },
       laptops: {
-        title: 'Laptops & Tablets',
-        note: 'Sourced laptops and tablets for office and consumer needs.',
+        title: 'Laptops & Notebooks',
+        note: 'Bandhar Enterprises: Sourced business laptops, ultrabooks, and notebooks from verified brand distributors inside India.',
         subcategories: [
-          { brand: 'Apple', desc: 'iPad and Mac devices sourced locally for resellers.', types: ['iPad Air', 'MacBook Air'] },
-          { brand: 'Dell', desc: 'Business-focused notebooks and workstations.', types: ['Dell XPS', 'Dell Latitude'] },
-          { brand: 'Lenovo', desc: 'Durable ThinkPad and IdeaPad local stocks.', types: ['ThinkPad T14', 'IdeaPad 3'] },
-          { brand: 'HP', desc: 'Commercial and consumer HP laptops.', types: ['HP Spectre', 'HP Pavilion'] }
+          { brand: 'Dell', desc: 'Enterprise Latitude series, XPS ultrabooks, and Vostro notebooks for daily business operations.', types: ['Latitude 5440', 'XPS 13', 'Vostro 3520'] },
+          { brand: 'HP', desc: 'ProBook, EliteBook, and commercial HP laptops with local vendor warranties.', types: ['ProBook 445', 'EliteBook 840', 'Pavilion 15'] },
+          { brand: 'Lenovo', desc: 'Industry-standard ThinkPad series, ThinkBook, and IdeaPad models for office staffing.', types: ['ThinkPad T14', 'ThinkBook 14', 'IdeaPad 3'] },
+          { brand: 'Apple', desc: 'MacBook Air and MacBook Pro workstations for designers and developers.', types: ['MacBook Air M2', 'MacBook Pro M3'] }
         ]
       },
       printers: {
-        title: 'Printers',
-        note: 'Bandhar sources home, office and industrial printers with GST billing documentation.',
+        title: 'Printers & Imaging',
+        note: 'Bandhar Enterprises: Direct domestic channels for commercial office printers, multifunction systems, and inkjets.',
         subcategories: [
-          { brand: 'Canon', desc: 'Photo-quality and office multifunction devices.', types: ['Canon PIXMA', 'imageRUNNER'] },
-          { brand: 'HP', desc: 'Laser and inkjet printers with wide service network.', types: ['HP LaserJet', 'HP OfficeJet'] },
-          { brand: 'Epson', desc: 'EcoTank and commercial inkjet solutions.', types: ['Epson EcoTank', 'Epson WorkForce'] },
-          { brand: 'Brother', desc: 'Reliable office printers and label printers.', types: ['Brother HL Series', 'Brother MFC'] }
+          { brand: 'Canon', desc: 'High-speed imageRUNNER copiers, digital production systems, and office inkjets.', types: ['imageRUNNER 2206', 'PIXMA G3010', 'LBP6030w'] },
+          { brand: 'HP', desc: 'LaserJet enterprise printers, smart tank models, and multi-function printers with nationwide services.', types: ['LaserJet Pro M126nw', 'Smart Tank 580', 'OfficeJet Pro'] },
+          { brand: 'Epson', desc: 'EcoTank monochrome and color ink tank printers for high-yield, low-cost office printing.', types: ['EcoTank L3250', 'EcoTank M100', 'WorkForce Pro'] },
+          { brand: 'Brother', desc: 'Heavy-duty monochrome lasers, color multi-functions, and industrial label printers.', types: ['DCP-L2520D', 'MFC-L2701DW', 'QL-800'] }
+        ]
+      },
+      storage: {
+        title: 'Storage Solutions (HDD & SSD)',
+        note: 'Bandhar Enterprises: Premium internal and external SSDs, high-capacity HDDs, and enterprise storage arrays.',
+        subcategories: [
+          { brand: 'Samsung', desc: 'High-speed SATA and NVMe PCIe M.2 SSDs for server boot drives and PC upgrades.', types: ['980 PRO NVMe', '870 EVO SATA', 'T7 Shield External'] },
+          { brand: 'WD', desc: 'Western Digital HDDs for surveillance (Purple), NAS (Red), and enterprise servers (Gold/Black).', types: ['WD Purple 4TB', 'WD Red 8TB', 'WD Blue 2TB'] },
+          { brand: 'Seagate', desc: 'IronWolf NAS hard drives, BarraCuda consumer drives, and Exos enterprise storage systems.', types: ['BarraCuda 2TB', 'IronWolf 6TB', 'Exos 16TB'] },
+          { brand: 'Crucial', desc: 'Affordable SATA and PCIe solid state drives for corporate bulk PC fleet refreshes.', types: ['Crucial BX500', 'Crucial P3 Plus', 'Crucial MX500'] }
+        ]
+      },
+      memory: {
+        title: 'RAM & System Memory',
+        note: 'Bandhar Enterprises: Desktop, laptop, and enterprise server memory upgrades from major DRAM manufacturers.',
+        subcategories: [
+          { brand: 'Kingston', desc: 'ValueRAM and high-performance Fury DDR4/DDR5 desktop and laptop SO-DIMM modules.', types: ['Fury Beast DDR4 16GB', 'ValueRAM DDR5 8GB', 'Kingston Server Premier'] },
+          { brand: 'Corsair', desc: 'High-performance Vengeance series DDR4 and DDR5 memory modules for workstations and power users.', types: ['Vengeance LPX 16GB', 'Vengeance DDR5 32GB'] },
+          { brand: 'G.Skill', desc: 'High-frequency Ripjaws and Trident Z memory modules optimized for custom computing setups.', types: ['Ripjaws V DDR4', 'Trident Z5 Neo DDR5'] },
+          { brand: 'Crucial', desc: 'Standard OEM-grade DDR4 and DDR5 RAM modules for office computer memory upgrades.', types: ['Crucial DDR4 8GB', 'Crucial DDR5 16GB'] }
         ]
       }
     };
@@ -493,7 +504,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // initial render
       const activeTabB = document.querySelector('.product-tabs-bandhar .tab-bandhar.active');
-      const defB = activeTabB ? activeTabB.dataset.category : 'mobiles';
+      const defB = activeTabB ? activeTabB.dataset.category : 'laptops';
       renderCategoryCreativeBandhar(defB);
     }
   })();
