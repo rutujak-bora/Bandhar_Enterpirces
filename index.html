@@ -239,89 +239,81 @@
     </div>
   </section>
 
-  <!-- Interactive Sourcing Estimator -->
-  <section id="sourcing-estimator" class="section reveal-on-scroll">
+  <!-- How We Work -->
+  <section id="how-we-work" class="section reveal-on-scroll">
     <div class="container">
-      <h2 class="section-title">Interactive Sourcing & Price Estimator</h2>
-      <p class="lead">Select your IT products, adjust quantity, and shipping mode to calculate real-time lead times, discounts, and dispatch details.</p>
+      <h2 class="section-title">How We Work</h2>
+      <p class="lead">Simple, transparent, and fully GST-compliant. Here is how Bandhar Enterprises sources and delivers IT products to your business across India.</p>
 
-      <div class="estimator-container">
-        <div class="estimator-card">
-          <div class="estimator-inputs">
-            <div class="form-group">
-              <label for="estCategory">Product Category</label>
-              <select id="estCategory" class="estimator-select">
-                <option value="laptops">Laptops & Notebooks</option>
-                <option value="printers" selected>Office & Industrial Printers</option>
-                <option value="storage">Storage Solutions (HDD & SSD)</option>
-                <option value="memory">RAM & System Memory</option>
-              </select>
-            </div>
+      <div class="process-steps">
 
-            <div class="form-group">
-              <label for="estBrand">Target Brand</label>
-              <select id="estBrand" class="estimator-select">
-                <!-- Sourced dynamically via script.js -->
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="estQuantity">Required Quantity: <span id="qtyVal">10</span> units</label>
-              <input type="range" id="estQuantity" min="5" max="500" value="10" step="5" class="estimator-slider" />
-              <div class="slider-labels">
-                <span>5 (Min MOQ)</span>
-                <span>250</span>
-                <span>500+</span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Shipping Method</label>
-              <div class="shipping-options">
-                <label class="ship-card active" id="shipAir">
-                  <input type="radio" name="shipping" value="air" checked style="display:none;" />
-                  <i class='bx bxs-plane-take-off'></i>
-                  <span>Express Air Delivery</span>
-                </label>
-                <label class="ship-card" id="shipSea">
-                  <input type="radio" name="shipping" value="sea" style="display:none;" />
-                  <i class='bx bxs-truck'></i>
-                  <span>Surface Logistics</span>
-                </label>
-              </div>
-            </div>
+        <div class="process-step">
+          <div class="process-icon">
+            <i class='bx bx-search-alt'></i>
+            <span class="step-number">01</span>
           </div>
+          <h3>You Share Your Requirement</h3>
+          <p>Tell us what IT products you need — Laptops, Printers, HDD, SSD, RAM or Storage — along with the quantity and preferred brands. No minimum order limit for enquiries.</p>
+        </div>
 
-          <div class="estimator-results">
-            <h3>Estimate Breakdown</h3>
-            <div class="results-grid">
-              <div class="result-item">
-                <span class="label">Discount Tier</span>
-                <span id="discountTier" class="value">Bronze Tier</span>
-              </div>
-              <div class="result-item">
-                <span class="label">Bulk Discount Percentage</span>
-                <span id="discountPercent" class="value">5%</span>
-              </div>
-              <div class="result-item">
-                <span class="label">Estimated Delivery</span>
-                <span id="estDeliveryTime" class="value">5 - 7 days</span>
-              </div>
-              <div class="result-item">
-                <span class="label">Sourcing Verification Status</span>
-                <span class="value success-badge"><i class='bx bx-check-shield'></i> 100% Tax Compliant</span>
-              </div>
-            </div>
-            
-            <div class="estimator-total-action">
-              <p class="estimator-disclaimer">Note: Bulk prices are calculated on domestic wholesale tariffs, and include state e-way bills, GST-compliant invoicing, and local delivery documentation.</p>
-              <button id="estimatorQuoteBtn" class="btn btn-primary btn-block">
-                <i class='bx bx-send'></i> Apply Estimate to Quote Request
-              </button>
-            </div>
+        <div class="process-connector"><i class='bx bx-right-arrow-alt'></i></div>
+
+        <div class="process-step">
+          <div class="process-icon">
+            <i class='bx bx-store-alt'></i>
+            <span class="step-number">02</span>
           </div>
+          <h3>We Source from India</h3>
+          <p>We procure your required products from authorized Indian brand distributors and wholesalers. 100% domestic sourcing — no imports, no customs delays.</p>
+        </div>
+
+        <div class="process-connector"><i class='bx bx-right-arrow-alt'></i></div>
+
+        <div class="process-step">
+          <div class="process-icon">
+            <i class='bx bx-receipt'></i>
+            <span class="step-number">03</span>
+          </div>
+          <h3>GST Invoice & Dispatch</h3>
+          <p>We provide a full GST-compliant tax invoice with e-way bill documentation. Products are dispatched via trusted logistics partners with real-time tracking.</p>
+        </div>
+
+        <div class="process-connector"><i class='bx bx-right-arrow-alt'></i></div>
+
+        <div class="process-step">
+          <div class="process-icon">
+            <i class='bx bx-package'></i>
+            <span class="step-number">04</span>
+          </div>
+          <h3>Delivered Across India</h3>
+          <p>Your order is delivered to your doorstep anywhere in India — all states and union territories covered. After-sales support provided on every order.</p>
+        </div>
+
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number">28+</span>
+          <span class="stat-label">States & UTs Served</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">IT Product Categories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">GST Compliant Billing</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Trusted IT Brands</span>
         </div>
       </div>
+
     </div>
   </section>
 

@@ -889,3 +889,136 @@ body {
   .subcard { min-height: auto; }
   .subcard::before { display: none; }
 }
+
+/* =====================================================
+   How We Work — Process Steps & Stats Bar
+   ===================================================== */
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin: 56px 0 48px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(11, 102, 178, 0.12);
+}
+
+.process-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--accent-bg-soft);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  font-size: 28px;
+  color: var(--accent-color);
+}
+
+.step-number {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.process-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--accent-color);
+  opacity: 0.4;
+  padding: 0 8px;
+  margin-top: 32px;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--accent-color);
+  border-radius: 16px;
+  padding: 32px 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 130px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .process-steps { flex-direction: column; align-items: center; gap: 16px; }
+  .process-connector { transform: rotate(90deg); margin: 0; }
+  .process-step { max-width: 100%; width: 100%; }
+  .stats-bar { flex-direction: column; gap: 24px; }
+  .stat-divider { width: 60px; height: 1px; }
+}
