@@ -17,8 +17,26 @@ jobs:
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           port: 22
           script: |
-            cd /var/www/html
-            sudo git fetch --all
-            sudo git reset --hard origin/master
+            # If repo folder doesn't exist, clone it fresh
+            if [ ! -d "/home/ubuntu/bandhar/.git" ]; then
+              rm -rf /home/ubuntu/bandhar
+              git clone https://github.com/rutujak-bora/Bandhar_Enterpirces.git /home/ubuntu/bandhar
+            else
+              cd /home/ubuntu/bandhar
+              git fetch --all
+              git reset --hard origin/master
+            fi
+
+            # Sync latest files to the Nginx web root
+            sudo rsync -av --delete \
+              --exclude='.git' \
+              --exclude='deploy_lightsail.py' \
+              /home/ubuntu/bandhar/ /var/www/html/
+
+            # Fix permissions
             sudo chown -R www-data:www-data /var/www/html
-            echo "CI/CD Deployment successful!"
+            sudo chmod -R 755 /var/www/html
+
+            # Reload Nginx (no downtime)
+            sudo systemctl reload nginx
+            echo "Deployment successful!"
