@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productDataBandhar = {
       laptops: {
         title: 'Laptops & Notebooks',
-        note: 'Bandhar Enterprises: Sourced business laptops, ultrabooks, and notebooks from verified brand distributors inside India.',
+        note: 'Bandhar Enterprises: Sources business laptops, ultrabooks, and notebooks from verified brand distributors inside India.',
         subcategories: [
           { brand: 'Dell', desc: 'Enterprise Latitude series, XPS ultrabooks, and Vostro notebooks for daily business operations.', types: ['Latitude 5440', 'XPS 13', 'Vostro 3520'] },
           { brand: 'HP', desc: 'ProBook, EliteBook, and commercial HP laptops with local vendor warranties.', types: ['ProBook 445', 'EliteBook 840', 'Pavilion 15'] },
