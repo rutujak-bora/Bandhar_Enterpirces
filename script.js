@@ -372,13 +372,24 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
       },
       memory: {
-        title: 'RAM & System Memory',
-        note: 'Bandhar Enterprises: Desktop, laptop, and enterprise server memory upgrades from major DRAM manufacturers.',
+        title: 'Desktop, Laptop & Server RAM',
+        note: 'Bandhar Enterprises: High-speed desktop memory, SO-DIMMs, and mission-critical ECC Registered server RAM sourced from premier semiconductor manufacturers.',
         subcategories: [
-          { brand: 'Kingston', desc: 'ValueRAM and high-performance Fury DDR4/DDR5 desktop and laptop SO-DIMM modules.', types: ['Fury Beast DDR4 16GB', 'ValueRAM DDR5 8GB', 'Kingston Server Premier'] },
-          { brand: 'Corsair', desc: 'High-performance Vengeance series DDR4 and DDR5 memory modules for workstations and power users.', types: ['Vengeance LPX 16GB', 'Vengeance DDR5 32GB'] },
-          { brand: 'G.Skill', desc: 'High-frequency Ripjaws and Trident Z memory modules optimized for custom computing setups.', types: ['Ripjaws V DDR4', 'Trident Z5 Neo DDR5'] },
-          { brand: 'Crucial', desc: 'Standard OEM-grade DDR4 and DDR5 RAM modules for office computer memory upgrades.', types: ['Crucial DDR4 8GB', 'Crucial DDR5 16GB'] }
+          { brand: 'Desktop RAM (DDR4 / DDR5)', desc: 'High-performance and OEM desktop RAM modules for corporate desktops, CAD workstations, and bulk office fleet upgrades.', types: ['Corsair Vengeance DDR4/DDR5', 'Kingston Fury Beast', 'G.Skill Ripjaws / Trident', 'Crucial DDR4 16GB / DDR5 32GB'] },
+          { brand: 'Server RAM (ECC Registered)', desc: 'Mission-critical ECC Registered (RDIMM / LRDIMM) server memory for multi-socket servers and virtualized data centers.', types: ['Samsung 32GB/64GB DDR4 ECC', 'Micron 64GB/128GB DDR5 RDIMM', 'Kingston Server Premier', 'SK Hynix Enterprise DDR4/DDR5'] },
+          { brand: 'Laptop RAM (SO-DIMM)', desc: 'Low-voltage DDR4 and high-density DDR5 SO-DIMM memory modules for business laptops and mobile workstations.', types: ['Crucial 8GB/16GB DDR4 SO-DIMM', 'Kingston 16GB/32GB DDR5', 'Corsair Vengeance SO-DIMM', 'Samsung OEM Laptop RAM'] },
+          { brand: 'Workstation High-Density Kits', desc: 'Matched multi-channel ECC Unbuffered and Registered RAM kits for engineering, rendering, and simulation rigs.', types: ['128GB (4x32GB) Quad-Channel Kit', '256GB (8x32GB) Octa-Channel Kit', '512GB Enterprise High-Density Array', 'Low-Profile Server Modules'] }
+        ]
+      },
+      servers: {
+        title: 'Server Components & Graphic Cards',
+        note: 'Bandhar Enterprises: Enterprise server hardware, workstation GPUs, Intel Xeon/AMD EPYC processors, and datacenter components sourced pan-India.',
+        subcategories: [
+          { brand: 'Graphic Cards (GPUs)', desc: 'Enterprise workstation GPUs and high-end desktop graphics cards for AI compute, video rendering, and deep learning setups.', types: ['NVIDIA GeForce RTX 4090 / 4080', 'NVIDIA RTX 4000/5000 Ada Generation', 'NVIDIA Quadro Workstation Series', 'AMD Radeon Pro & Instinct Accelerators'] },
+          { brand: 'Server Processors (CPUs)', desc: 'Enterprise multi-core server processors with high cache capacity for cloud computing, virtualization, and database workloads.', types: ['Intel Xeon Scalable (Silver / Gold / Platinum)', 'AMD EPYC 9004 / 7003 Series', 'Intel Xeon E-2300 Series', 'Dual-Socket Server CPU Kits'] },
+          { brand: 'Server Motherboards', desc: 'Single and dual-socket enterprise server boards with multi-PCIe lanes, IPMI remote management, and 10GbE network interfaces.', types: ['Supermicro X12 / H12 Server Boards', 'ASUS Enterprise Server Motherboards', 'Gigabyte Enterprise Series', 'Intel Server Board Family'] },
+          { brand: 'RAID & SAS Host Bus Adapters', desc: 'Hardware RAID controllers, 12Gb/s SAS/SATA/NVMe host bus adapters with battery backup units (BBU) and cache protection.', types: ['Broadcom / LSI MegaRAID 9361/9460', 'Dell PERC H755 / H740P Controller', 'HPE Smart Array P408i Series', 'HighPoint NVMe RAID Cards'] },
+          { brand: 'Server Power Supplies & Enclosures', desc: 'Redundant 80 PLUS Platinum & Titanium hot-swappable power supply units, server chassis kits, and high-CFM cooling fans.', types: ['Supermicro 800W/1200W Redundant PSU', 'Dell / HPE Hot-Plug Server PSUs', '1U / 2U / 4U Rackmount Chassis', 'High-CFM Server Cooling Kits'] }
         ]
       }
     };
