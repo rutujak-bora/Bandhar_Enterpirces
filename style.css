@@ -1022,3 +1022,174 @@ body {
   .stats-bar { flex-direction: column; gap: 24px; }
   .stat-divider { width: 60px; height: 1px; }
 }
+
+/* =====================================================
+   Data Centers Section
+   ===================================================== */
+.datacenter-section {
+  background: linear-gradient(160deg, var(--bg-body) 60%, rgba(11,102,178,0.06) 100%);
+  border-top: 3px solid var(--accent-color);
+}
+
+.datacenter-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 48px;
+}
+
+/* 3-column responsive grid */
+.dc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.dc-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.dc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(11, 102, 178, 0.12);
+  border-color: var(--accent-color);
+}
+
+.dc-card-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--accent-bg-soft);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+}
+
+.dc-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.dc-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.dc-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dc-card ul li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+}
+
+.dc-card ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 12px;
+}
+
+/* Special highlight card — CTA */
+.dc-card-cta {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #085392 100%);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+.dc-card-cta .dc-card-icon {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.dc-card-cta h3 {
+  color: #fff;
+}
+
+.dc-card-cta p {
+  color: rgba(255,255,255,0.85);
+}
+
+.dc-cta-btn {
+  margin-top: auto;
+  background: #fff;
+  color: var(--accent-color);
+  border-color: #fff;
+  font-weight: 700;
+}
+
+.dc-cta-btn:hover {
+  background: rgba(255,255,255,0.9);
+  color: var(--accent-color);
+}
+
+/* DC stats row */
+.dc-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--accent-bg-soft);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dc-stat {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.dc-stat-num {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.dc-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.dc-stat-sep {
+  width: 1px;
+  height: 48px;
+  background: var(--border-color);
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .dc-grid { grid-template-columns: 1fr; }
+  .dc-stats-row { flex-direction: column; gap: 20px; }
+  .dc-stat-sep { width: 60px; height: 1px; }
+}
